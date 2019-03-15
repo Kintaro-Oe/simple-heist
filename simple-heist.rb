@@ -58,7 +58,7 @@ while true do
     puts "A combination safe, it looks very sturdy. Attempt to crack it? 'y'/'n'"
     command = gets.chomp.downcase
     if command == "y"
-      puts "You move in closer."
+      puts "You move in closer. Enter combination:"
       location += 1
       command = ""
     end
