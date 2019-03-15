@@ -1,7 +1,7 @@
 location = 0
 general = ['quit', 'options']
 hall = ['', 'north', 'south', 'look', 'look at floor', 'look at door']
-study = ['','north', 'south', 'look', 'look at desk', 'look at safe', 'y', 'n']
+study = ['', 'south', 'look', 'look at desk', 'look at safe', 'y', 'n']
 safe = ['', 'stop', '7591']
 
 puts "Type 'options' at any time to see the available commands."
@@ -19,9 +19,15 @@ while true do
   end
   
   if command == "options"
-    if location == 0 || location == 1
+    if location == 0
       puts "Exit game:     'quit'"
       puts "Travel:        'north', 'south'"
+      puts "Look around:   'look'"
+      puts "Examine:       'look at xxxx'"
+    end
+    if location == 1
+      puts "Exit game:     'quit'"
+      puts "Travel:        'south'"
       puts "Look around:   'look'"
       puts "Examine:       'look at xxxx'"
     end
@@ -38,7 +44,7 @@ while true do
   elsif location == 0 && command == "look at floor" 
     puts "Nothing to see here"
   elsif location == 0 && command == "look at door" 
-    puts "It's wide open"
+    puts "It's wide open. What could be ahead?"
   elsif location == 0 && command == "north" 
     puts "Moved into the study."
     location += 1
